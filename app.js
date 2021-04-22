@@ -1,9 +1,17 @@
 const http = require('http');
 
-const routes = require('./routes');
+const express = require('express')
 
-console.log(routes.someText);
+const app = express()
 
-const server = http.createServer(routes.handler);
+app.use('/add-product',(req, res, next)=>{
+    console.log('add product page!')
+    res.send('<h1>Add Product</h1><br><h3>Add</h3>')
+})
 
-server.listen(3000);
+app.use('/',(req, res, next)=>{
+    console.log('root page')
+    res.send('<h1>Root</h1>')
+})
+
+app.listen(3000);
