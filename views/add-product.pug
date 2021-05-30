@@ -1,0 +1,14 @@
+extends ./main-layout.pug
+
+block content
+    main
+        div.container
+            div.row
+                h1.display-1 Products
+        div.container
+            div.row
+                form(action='add-product', method='POST')
+                  input(name='title', type='text')
+                  button Enviar
+
+    
